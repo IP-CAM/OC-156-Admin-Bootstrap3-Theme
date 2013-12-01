@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "/www/thelovestore.ru/webstat"
+AuthUserFile /var/www/thelovestore/data/etc/52928549.passwd
+DirectoryIndex index.html
+<Limit GET POST>
+	require valid-user
+</Limit>

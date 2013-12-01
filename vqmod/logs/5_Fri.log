@@ -1,0 +1,925 @@
+---------- Date: 2013-11-29 00:18:18 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=extension/module&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 00:49:49 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=extension/module&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 00:50:19 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=extension/module&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 01:35:21 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=extension/module&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 01:53:52 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 13:20:08 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category/update&amp;token=50a46af160b16f4dc239f45c645d29b5&amp;category_id=261
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 14:57:48 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/manufacturer&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:09:06 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:11:03 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:15:17 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:18:13 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:18:35 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:18:55 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:21:17 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:21:43 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:22:01 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:27:02 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:29:51 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:32:29 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/product&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 15:51:32 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/attribute_group&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:16:35 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:16:59 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:17:38 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:18:25 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:20:26 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:22:03 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:23:12 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:24:18 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:25:13 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:26:02 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:27:35 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:29:55 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:33:43 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:38:08 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/review&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:41:25 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 16:59:25 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/product&amp;token=50a46af160b16f4dc239f45c645d29b5&amp;filter_status=1
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-11-29 17:00:19 ~ IP : 110.171.251.35 ----------
+REQUEST URI : /admin/index.php?route=catalog/category&amp;token=50a46af160b16f4dc239f45c645d29b5
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_gravatar.xml
+   id        : Admin Gravatar
+   version   : 1.2
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="icon-caret-down"></i></a>
+
+MOD DETAILS:
+   modFile   : /var/www/thelovestore/data/www/thelovestore.ru/vqmod/xml/admin_notification.xml
+   id        : Admin Panel Notication
+   version   : 1.0
+   vqmver    : 1.0.8
+   author    : Patrick - CakeDeliver.com
+
+File Name    : admin/view/template/common/header.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+
+----------------------------------------------------------------------
+
+

@@ -1,0 +1,146 @@
+<modification>
+	<id>Admin Panel Notication</id>
+	<version>1.0</version>
+	<vqmver>1.0.8</vqmver>
+	<author>Patrick - CakeDeliver.com</author>
+	<file name="admin/view/template/common/header.tpl">
+		<operation>	
+			<search position="before"><![CDATA[</head>]]></search>
+			<add><![CDATA[
+			<!-- Admin Panel Notication -->
+			<style type="text/css">
+			.pull-right {
+				float:right;
+				}
+			.label {
+			  display: inline;
+			  padding: .2em .6em .3em;
+			  font-size: 75%;
+			  font-weight: bold;
+			  line-height: 1;
+			  color: #ffffff;
+			  text-align: center;
+			  white-space: nowrap;
+			  vertical-align: baseline;
+			  border-radius: .25em;
+			}
+			.label-success {
+			  background-color: #5cb85c;
+			}
+			.label-info {
+			  background-color: #5bc0de;
+			}
+			.label-warning {
+			  background-color: #f0ad4e;
+			}
+			.label-danger {
+			  background-color: #d9534f;
+			}
+			</style>
+			<!-- Admin Panel Notication -->
+			]]></add>
+			
+		</operation>
+		<operation>	
+			<search position="before"><![CDATA[<li id="store"><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>]]></search>
+			<add><![CDATA[
+		<!-- Admin Panel Notication -->
+		  <li id="notification"><a class="top"><?php echo $text_notification; ?> <span class="label label-danger"><?php echo $total_notification; ?></span></a>
+                     <ul>
+                        <li><a href="<?php echo $order; ?>&filter_date_added=<?php echo date('Y-m-d'); ?>"><?php echo $text_new_order; ?><span class="label pull-right<?php echo ($total_new_order == '0' ? ' label-warning' : ' label-danger'); ?>"><?php echo $total_new_order; ?></span></a></li>
+                        <li><a href="<?php echo $order; ?>&filter_order_status_id=1"><?php echo $text_pending_order; ?><span class="label pull-right<?php echo ($total_pending_order == '0' ? ' label-warning' : ' label-danger'); ?>"><?php echo $total_pending_order; ?></span></a></li>
+                        <li><a href="<?php echo $customer; ?>&filter_date_added=<?php echo date('Y-m-d'); ?>"><?php echo $text_new_customer; ?><span class="label pull-right<?php echo ($total_new_customer == '0' ? ' label-success' : ' label-danger'); ?>"><?php echo $total_new_customer; ?></span></a></li>
+                        <li><a href="<?php echo $customer; ?>&filter_approved=0"><?php echo $text_pending_customer; ?><span class="label pull-right<?php echo ($total_customer_approval == '0' ? ' label-success' : ' label-danger'); ?>"><?php echo $total_customer_approval; ?></span></a></li>
+                        <li><a href="<?php echo $report_customer_online; ?>"><?php echo $text_report_customer_online; ?><span class="label pull-right<?php echo ($total_customer_online == '0' ? ' label-success' : ' label-danger'); ?>"><?php echo $total_customer_online; ?></span></a></li>
+                        <li><a href="<?php echo $product; ?>&filter_quantity=0"><?php echo $text_stockout; ?><span class="label pull-right<?php echo ($total_stockout == '0' ? ' label-info' : ' label-danger'); ?>"><?php echo $total_stockout; ?></span></a></li>
+                        <li><a href="<?php echo $return; ?>&filter_date_added=<?php echo date('Y-m-d'); ?>"><?php echo $text_return; ?><span class="label pull-right<?php echo ($total_new_return == '0' ? ' label-info' : ' label-danger'); ?>"><?php echo $total_new_return; ?></span></a></li>
+                        <li><a href="<?php echo $review; ?>&sort=r.status&order=ASC"><?php echo $text_pending_review; ?><span class="label pull-right<?php echo ($total_review_approval == '0' ? ' label-info' : ' label-danger'); ?>"><?php echo $total_review_approval; ?></span></a></li>
+                        <li><a href="<?php echo $affiliate; ?>&filter_approved=0"><?php echo $text_pending_affiliate; ?><span class="label pull-right<?php echo ($total_affiliate_approval == '0' ? ' label-info' : ' label-danger'); ?>"><?php echo $total_affiliate_approval; ?></span></a></li>
+                     </ul>
+                  </li>
+		<!-- Admin Panel Notication -->
+			]]></add>
+			
+		</operation>
+	</file>
+
+	<file name="admin/controller/common/header.php">
+		<operation>	
+			<search position="after"><![CDATA[$this->data['text_zone'] = $this->language->get('text_zone');]]></search>
+			
+			<add><![CDATA[
+			/* Admin Panel Notication */
+			$this->data['text_new_customer'] = $this->language->get('text_new_customer');
+			$this->data['text_pending_customer'] = $this->language->get('text_pending_customer');
+			$this->data['text_new_order'] = $this->language->get('text_new_order');
+			$this->data['text_pending_order'] = $this->language->get('text_pending_order');
+			$this->data['text_pending_review'] = $this->language->get('text_pending_review');
+			$this->data['text_pending_affiliate'] = $this->language->get('text_pending_affiliate');
+			$this->data['text_notification'] = $this->language->get('text_notification');
+			$this->data['text_stockout'] = $this->language->get('text_stockout');
+			/* Admin Panel Notication */
+			]]></add>
+			
+		</operation>
+		<operation>	
+			<search position="before"><![CDATA[$this->data['stores'] = array();]]></search>
+			<add><![CDATA[
+				/* Admin Panel Notication */
+				//new customer by today
+$this->load->model('sale/customer');
+$customer_total_data = array('filter_date_added' => date('Y-m-d')); // 2013-10-10
+$this->data['total_new_customer'] = $this->model_sale_customer->getTotalCustomers($customer_total_data);
+$this->data['total_customer_approval'] = $this->model_sale_customer->getTotalCustomersAwaitingApproval();
+$this->load->model('report/online');
+$this->data['total_customer_online'] = $this->model_report_online->getTotalCustomersOnline();
+
+//new order by today
+$this->load->model('sale/order');
+$total_order_data = array('filter_date_added' => date('Y-m-d')); // 2013-10-10
+$this->data['total_new_order'] = $this->model_sale_order->getTotalOrders($total_order_data);
+$this->data['total_pending_order'] = $this->model_sale_order->getTotalOrdersByOrderStatusId($this->config->get('config_order_status_id'));
+
+//return
+$this->load->model('sale/return');
+$total_return_data = array('filter_date_added' => date('Y-m-d')); // 2013-10-10
+$this->data['total_new_return'] = $this->model_sale_return->getTotalReturns($total_return_data);
+
+
+//stock
+$this->load->model('catalog/product');
+$total_product_data = array('filter_quantity' => '0');
+$this->data['total_stockout'] = $this->model_catalog_product->getTotalProducts($total_product_data);
+
+
+$this->load->model('catalog/review');
+$this->data['total_review_approval'] = $this->model_catalog_review->getTotalReviewsAwaitingApproval();
+		
+$this->load->model('sale/affiliate');
+$this->data['total_affiliate_approval'] = $this->model_sale_affiliate->getTotalAffiliatesAwaitingApproval();
+
+$this->data['total_notification'] = $this->data['total_new_return'] + $this->data['total_stockout'] + $this->data['total_new_customer'] + $this->data['total_customer_approval'] + $this->data['total_customer_online'] + $this->data['total_new_order'] + $this->data['total_pending_order'] + $this->data['total_review_approval'] + $this->data['total_affiliate_approval'];
+				/* Admin Panel Notication */
+			]]></add>
+			
+		</operation>
+	</file>
+
+	<file name="admin/language/english/common/header.php">
+		<operation>	
+			<search position="after"><![CDATA[$_['text_zone']                        = 'Zones';]]></search>
+			<add><![CDATA[
+/* Admin Panel Notication */
+$_['text_new_order']                   = 'New Order';
+$_['text_pending_order']                   = 'Pending Order';
+$_['text_new_customer']             = 'New Customer';
+$_['text_pending_customer']                      = 'Pending Customer';
+$_['text_pending_review']                      = 'Pending Review';
+$_['text_pending_affiliate']                     = 'Pending Affiliate';
+$_['text_notification']                    = 'Notification';
+$_['text_stockout']                    = 'Out of stock';
+/* Admin Panel Notication */
+			]]></add>
+			
+		</operation>
+	</file>
+</modification>

@@ -1,0 +1,345 @@
+AWSTATS DATA FILE 6.95 (build 1.943)
+# If you remove this file, all statistics for date 201311 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.thelovestore.ru.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1961                
+POS_TIME 2646                
+POS_VISITOR 8106                
+POS_DAY 8958                
+POS_DOMAIN 3499                
+POS_LOGIN 3734                
+POS_ROBOT 3889                
+POS_WORMS 4180                
+POS_EMAILSENDER 4311                
+POS_EMAILRECEIVER 4454                
+POS_SESSION 9163                
+POS_SIDER 9360                
+POS_FILETYPES 4589                
+POS_OS 4885                
+POS_BROWSER 4994                
+POS_SCREENSIZE 5354                
+POS_UNKNOWNREFERER 5428                
+POS_UNKNOWNREFERERBROWSER 5515                
+POS_ORIGIN 5597                
+POS_SEREFERRALS 5742                
+POS_PAGEREFS 5886                
+POS_SEARCHWORDS 6034                
+POS_KEYWORDS 6186                
+POS_MISC 2310                
+POS_ERRORS 6245                
+POS_CLUSTER 3590                
+POS_SIDER_404 6398                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20131201000022 2845 853628 6010299326584
+FirstTime 20131126175526
+LastTime 20131130235943
+LastUpdate 20131201000311 2845 0 2844 0 0
+TotalVisits 49                  
+TotalUnique 19                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 19                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 1 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 362 2229 10493412 44 328 24915460
+1 57 267 691981 12 36 1433624
+2 6 39 438791 1 46 3593730
+3 1 1 6341 0 0 0
+4 2 2 12431 2 24 1917655
+5 2 2 12431 2 24 1947177
+6 1 19 808174 2 38 2449291
+7 0 0 0 0 0 0
+8 2 2 67228 1 2 37730
+9 0 0 0 3 3 89438
+10 305 797 6092448 12 121 6152664
+11 140 645 2377602 10 259 12340119
+12 45 263 1006062 0 54 3225953
+13 79 1703 1914216 7 57 2948776
+14 287 823 1479197 19 67 2408897
+15 134 1078 1431839 20 56 3763552
+16 114 1447 5848421 18 181 11029904
+17 250 727 9329571 27 164 8935664
+18 460 2475 13613000 46 315 13368486
+19 572 3124 10790171 49 636 28399664
+20 222 1944 10987734 10 417 23838343
+21 683 2646 4475388 50 304 21959316
+22 87 922 530073 18 108 4505472
+23 388 2553 29918421 32 700 41815520
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 4199 23708 112324932
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 4
+no_user_agent 3471 217549674 20131130211041 0
+crawl 4 282262 20131130054018 0
+bot[\s_+:,\.\;\/\\-] 2 16370 20131128025545 0
+googlebot 1 68284 20131129150617 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 13
+css 1930 2143032 0 0
+png 7971 11962952 0 0
+ico 4 615 0 0
+ttf 3 136562 0 0
+woff 161 877540 0 0
+map 26 3618 0 0
+php 3854 44514752 0 0
+html 141 1581088 0 0
+xml 1 385 0 0
+js 3962 5433613 0 0
+jpg 5606 45572108 0 0
+Unknown 13 82515 0 0
+gif 36 16152 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 6
+macosx 22512
+linuxandroid 180
+winlong 55
+winxp 8
+linux 21
+win2008 932
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 18
+msie6.0 5
+chrome29.0.1547.57 21468
+chrome23.0.1271.64 1
+android 17
+firefox21.0 210
+firefox10.0.1 2
+chrome31.0.1650.57 1669
+safari4.0.3 16
+opera9.80 1
+firefox3.0.5 2
+msie8.0 19
+chrome16.0.912.75 55
+chrome26.0.1410.64 1
+firefox14.0.1 1
+firefox23.0 1
+chrome22.0.1229.94 76
+chrome31.0.1650.59 163
+firefox3.6.13 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 0
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 166 230
+From1 208 208
+From2 0 0
+From3 0 0
+From4 3825 23270
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 6
+403 1 503
+302 290 179121
+206 37 480745
+500 10 4120
+301 5 2821
+404 110 2473333
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 19
+/catalog/view/theme/precise/content/banner-full-width.png 34 http://thelovestore.ru/
+/apple-touch-icon-precomposed.png 1 -
+/image/data/catalog/5896-1.jpg 1 http://thelovestore.ru/index.php
+/robots.txt 3 -
+/user/ 1 -
+/bitrix/admin/index.php 2 -
+/apple-touch-icon.png 1 -
+/admin.php 16 -
+/administrator/index.php 22 -
+/admin/%3Cb%3ENotice%3C/b%3E:%20Undefined%20variable:%20action%20in%20%3Cb%3E/var/www/thelovestore/data/www/thelovestore.ru/admin/view/template/catalog/category_list.tpl%3C/b%3E%20on%20line%20%3Cb%3E64%3C/b%3E 1 http://thelovestore.ru/admin/index.php
+/admin/login.php 1 -
+/install/view/image/field.png 1 http://thelovestore.ru/install/index.php
+/catalog/view/theme/precise/css/images/ui-bg_flat_75_ffffff_40x100.png 1 http://thelovestore.ru/index.php
+/account/login 1 -
+/%3Cb%3ENotice%3C/b%3E:%20Undefined%20variable:%20information_product%20in%20%3Cb%3E/var/www/thelovestore/data/www/thelovestore.ru/catalog/view/theme/precise/template/product/product.tpl%3C/b%3E%20on%20line%20%3Cb%3E41%3C/b%3Ehttp://thelovestore.ru/image/ 1 http://thelovestore.ru/index.php
+/admin/%3Cb%3ENotice%3C/b%3E:%20Undefined%20variable:%20action%20in%20%3Cb%3E/var/www/thelovestore/data/www/thelovestore.ru/admin/view/template/catalog/manufacturer_list.tpl%3C/b%3E%20on%20line%20%3Cb%3E65%3C/b%3E 2 http://thelovestore.ru/admin/index.php
+/wp-login.php 19 -
+/rss 1 -
+/forum 1 http://THELOVESTORE.RU/forum
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 19
+110.171.251.35 3851 22511 83501144 20131130235943
+95.0.50.43 209 209 1313011 20131129102332
+212.232.46.182 87 681 16875416 20131130043633
+178.20.178.94 29 141 4906349 20131130052625
+46.118.121.132 3 3 188896 20131130023248
+93.74.161.160 2 2 118732 20131127015826
+95.67.80.226 2 2 19647 20131129153749
+144.76.62.77 2 55 2091638 20131127103920
+178.161.141.254 2 55 2052793 20131128170740
+136.169.10.10 2 2 67228 20131128080704
+91.200.13.5 1 1 13140 20131129152339
+190.36.85.246 1 1 9397 20131130104909
+69.164.111.198 1 19 808174 20131127065305
+185.24.218.83 1 1 4096 20131128182509
+199.30.228.159 1 1 11052 20131126202743
+5.178.87.47 1 1 55678 20131127190046
+204.101.161.159 2 21 216529 20131128232445
+212.33.255.150 1 1 70268 20131128170735
+186.94.143.233 1 1 1744 20131129000021
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 5
+20131126 626 6438 10182771 5
+20131127 855 2675 17621314 8
+20131128 942 5135 52251981 13
+20131129 1136 6995 21648550 13
+20131130 640 2465 10620316 10
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+1h+ 12
+5mn-15mn 4
+15mn-30mn 1
+2mn-5mn 2
+0s-30s 23
+30mn-1h 7
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 36
+/admin/index.php 3161 34487152 9 11
+/index.php 439 3568509 16 17
+/catalog/view/theme/precise/font/social-icons.woff 147 260940 0 4
+/ 122 1524348 21 11
+/myadmin/sql.php 90 818987 0 0
+/myadmin/import.php 33 185653 0 0
+/admin/view/javascript/bootstrap-tagsinput/bootstrap-tagsinput.min.js.map 26 3618 0 0
+/myadmin/navigation.php 21 115142 0 0
+/myadmin/phpmyadmin.css.php 15 70808 0 0
+/admin/ 15 45974 1 1
+/catalog/view/theme/precise/font/social-icons.ttf 2 88778 0 2
+/sitemap.xml 1 385 0 1
+/sex-toys 3 17237 0 1
+/for-her 1 5767 0 0
+/myadmin/tbl_change.php 5 29169 0 0
+/myadmin/tbl_replace.php 3 30356 0 0
+/myadmin/tbl_import.php 13 85878 0 0
+/myadmin/export.php 5 4752032 0 0
+/all-for-sex 1 5708 0 0
+/myadmin/tbl_structure.php 12 85870 0 0
+/myadmin/index.php 7 14067 0 0
+/install/index.php 9 38926 2 1
+/myadmin/querywindow.php 1 3468 0 0
+/catalog/view/theme/precise/font/itembridge.woff 14 616600 0 0
+/myadmin/db_structure.php 2 28463 0 0
+/myadmin/tbl_operations.php 1 6937 0 0
+/myadmin/main.php 3 22512 0 0
+/myadmin/tbl_indexes.php 1 4026 0 0
+/myadmin/ 3 10432 0 0
+/desktops 2 20651 0 0
+/catalog/view/theme/precise/font/itembridge.ttf 1 47784 0 0
+/vqmod/install/ 1 334 0 0
+/lingerie 6 33152 0 0
+/myadmin/tbl_export.php 7 54928 0 0
+/myadmin/tbl_sql.php 13 50523 0 0
+/myadmin/tbl_row_action.php 13 61346 0 0
+END_SIDER
