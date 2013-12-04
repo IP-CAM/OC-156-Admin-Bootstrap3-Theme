@@ -1,0 +1,186 @@
+<modification>
+
+	<id>Brands - Extra</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>ovife21</author>
+	<file name="admin/controller/catalog/manufacturer.php">
+		<operation>
+			<search position="after"><![CDATA[$this->data['token'] = $this->session->data['token'];]]></search>
+			<add><![CDATA[
+			$this->load->model('localisation/language');		
+			$this->data['languages'] = $this->model_localisation_language->getLanguages();
+			
+			$query = $this->db->query("CREATE TABLE IF NOT EXISTS `" . DB_PREFIX . "manufacturer_description` (
+			  `manufacturer_id` int(11) NOT NULL,
+			  `language_id` int(11) NOT NULL,
+			  `description` text COLLATE utf8_bin NOT NULL,
+			  `meta_description` varchar(255) COLLATE utf8_bin NOT NULL,
+			  `meta_keyword` varchar(255) COLLATE utf8_bin NOT NULL,
+			  `custom_title` varchar(255) COLLATE utf8_bin DEFAULT '',
+			  PRIMARY KEY (`manufacturer_id`,`language_id`)
+			) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;");
+			
+			if (isset($this->request->post['manufacturer_description'])) {
+				$this->data['manufacturer_description'] = $this->request->post['manufacturer_description'];
+			} elseif (isset($this->request->get['manufacturer_id'])) {
+				$this->data['manufacturer_description'] = $this->model_catalog_manufacturer->getManufacturerDescriptions($this->request->get['manufacturer_id']);
+			} else {
+				$this->data['manufacturer_description'] = array();
+			}
+			
+			]]></add>
+		</operation>
+	</file>
+	<file name="admin/model/catalog/manufacturer.php">
+		<operation>
+			<search position="after"><![CDATA[$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'manufacturer_id=" . (int)$manufacturer_id . "'");]]></search>
+			<add><![CDATA[
+			$this->db->query("DELETE FROM " . DB_PREFIX . "manufacturer_description WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");			
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$manufacturer_id = $this->db->getLastId();]]></search>
+			<add><![CDATA[
+			
+			foreach ($data['manufacturer_description'] as $language_id => $value) {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "manufacturer_description SET manufacturer_id = '" . (int)$manufacturer_id . "', language_id = '" . (int)$language_id . "', custom_title = '" . $this->db->escape($value['custom_title']) . "', meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "', meta_description = '" . $this->db->escape($value['meta_description']) . "', description = '" . $this->db->escape($value['description']) . "'");
+			}
+			
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[public function editManufacturer($manufacturer_id, $data) {]]></search>
+			<add><![CDATA[
+			
+			$this->db->query("DELETE FROM " . DB_PREFIX . "manufacturer_description WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
+			
+			foreach ($data['manufacturer_description'] as $language_id => $value) {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "manufacturer_description SET manufacturer_id = '" . (int)$manufacturer_id . "', language_id = '" . (int)$language_id . "', custom_title = '" . $this->db->escape($value['custom_title']) . "', meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "', meta_description = '" . $this->db->escape($value['meta_description']) . "', description = '" . $this->db->escape($value['description']) . "'");
+			}
+			
+			]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[public function getManufacturer($manufacturer_id) {]]></search>
+			<add><![CDATA[
+			public function getManufacturerDescriptions($manufacturer_id) {
+				$manufacturer_description_data = array();
+				
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer_description WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
+				
+				foreach ($query->rows as $result) {
+					$manufacturer_description_data[$result['language_id']] = array(
+						'meta_keyword'     => $result['meta_keyword'],
+						'meta_description' => $result['meta_description'],
+						'description'      => $result['description'],
+						'custom_title'     => $result['custom_title']
+					);
+				}
+				
+				return $manufacturer_description_data;
+			}
+			]]></add>
+		</operation>
+	</file>
+	<file name="admin/view/template/catalog/manufacturer_form.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<a href="#tab-general"><?php echo $tab_general; ?></a>]]></search>
+			<add><![CDATA[<a href="#tab-general"><?php echo $tab_general; ?></a><a href="#tab-data">Data</a>]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$('#tabs a').tabs();]]></search>
+			<add><![CDATA[$('#languages a').tabs();]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[<?php echo $footer; ?>]]></search>
+			<add><![CDATA[
+			<script type="text/javascript" src="view/javascript/ckeditor/ckeditor.js"></script> 
+			<script type="text/javascript"><!--
+			<?php foreach ($languages as $language) { ?>
+			CKEDITOR.replace('description<?php echo $language['language_id']; ?>', {
+				filebrowserBrowseUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+				filebrowserImageBrowseUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+				filebrowserFlashBrowseUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+				filebrowserUploadUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+				filebrowserImageUploadUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>',
+				filebrowserFlashUploadUrl: 'index.php?route=common/filemanager&token=<?php echo $token; ?>'
+			});
+			<?php } ?>
+			//--></script>
+			]]></add>
+		</operation>	
+		<operation>
+			<search position="before"><![CDATA[</form>]]></search>
+			<add><![CDATA[
+			<div id="tab-data">
+			       
+				<div id="languages" class="htabs">
+            <?php foreach ($languages as $language) { ?>
+			<a href="#language<?php echo $language['language_id']; ?>"><img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /> <?php echo $language['name']; ?></a>
+            <?php } ?>
+          </div>
+          <?php foreach ($languages as $language) { ?>
+          <div id="language<?php echo $language['language_id']; ?>">
+            <table class="form">
+              <tr>
+                <td>Custom Title:</td>
+				<td><input type="text" name="manufacturer_description[<?php echo $language['language_id']; ?>][custom_title]" size="100" value="<?php echo isset($manufacturer_description[$language['language_id']]) ? $manufacturer_description[$language['language_id']]['custom_title'] : ''; ?>" /></td>
+              </tr>
+			  <tr>
+                <td>Meta Description:</td>
+                <td><textarea name="manufacturer_description[<?php echo $language['language_id']; ?>][meta_description]" cols="40" rows="5"><?php echo isset($manufacturer_description[$language['language_id']]) ? $manufacturer_description[$language['language_id']]['meta_description'] : ''; ?></textarea></td>
+              </tr>
+              <tr>
+                <td>Meta Keywords:</td>
+                <td><textarea name="manufacturer_description[<?php echo $language['language_id']; ?>][meta_keyword]" cols="40" rows="5"><?php echo isset($manufacturer_description[$language['language_id']]) ? $manufacturer_description[$language['language_id']]['meta_keyword'] : ''; ?></textarea></td>
+              </tr>
+              <tr>
+                <td>Description:</td>
+                <td><textarea name="manufacturer_description[<?php echo $language['language_id']; ?>][description]" id="description<?php echo $language['language_id']; ?>"><?php echo isset($manufacturer_description[$language['language_id']]) ? $manufacturer_description[$language['language_id']]['description'] : ''; ?></textarea></td>
+              </tr>
+            </table>
+          </div>
+          <?php } ?>
+			</div>
+			
+			]]></add>
+		</operation>			
+	</file>
+	<file name="catalog/model/catalog/manufacturer.php">
+		<operation>
+			<search position="replace"><![CDATA[$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer m LEFT JOIN " . DB_PREFIX . "manufacturer_to_store m2s ON (m.manufacturer_id = m2s.manufacturer_id) WHERE m.manufacturer_id = '" . (int)$manufacturer_id . "' AND m2s.store_id = '" . (int)$this->config->get('config_store_id') . "'");]]></search>
+			<add><![CDATA[$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer m LEFT JOIN " . DB_PREFIX . "manufacturer_description md ON (m.manufacturer_id = md.manufacturer_id) LEFT JOIN " . DB_PREFIX . "manufacturer_to_store m2s ON (m.manufacturer_id = m2s.manufacturer_id) WHERE m.manufacturer_id = '" . (int)$manufacturer_id . "' AND (md.language_id = '" . (int)$this->config->get('config_language_id') . "' OR md.language_id is null) AND m2s.store_id = '" . (int)$this->config->get('config_store_id') . "'");]]></add>
+		</operation>		
+	</file>	
+	<file name="catalog/controller/product/manufacturer.php">
+		<operation>
+			<search position="replace"><![CDATA[$this->document->setTitle($manufacturer_info['name']);]]></search>
+			<add><![CDATA[($manufacturer_info['custom_title'] == '')?$this->document->setTitle($manufacturer_info['name']):$this->document->setTitle($manufacturer_info['custom_title']);]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[if ($manufacturer_info) {]]></search>
+			<add><![CDATA[
+				$this->document->setKeywords($manufacturer_info['meta_keyword']);
+				$this->document->setDescription($manufacturer_info['meta_description']);
+				$this->data['description'] = html_entity_decode($manufacturer_info['description'], ENT_QUOTES, 'UTF-8');
+				]]></add>
+		</operation>		
+	</file>	
+	<file name="catalog/view/theme/*/template/product/manufacturer_info.tpl">
+		<operation>
+			<search position="after"><![CDATA[$heading_title;]]></search>
+			<add><![CDATA[
+				<?php if ($description) { ?>
+				  <div class="category-info">
+					<?php echo $description; ?>					
+				  </div>
+				<?php } ?>
+			]]></add>
+		</operation>		
+	</file>	
+	
+</modification>
+
+
+

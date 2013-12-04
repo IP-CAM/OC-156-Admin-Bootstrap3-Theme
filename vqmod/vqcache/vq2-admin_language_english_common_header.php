@@ -43,6 +43,13 @@ $_['text_order']                       = 'Orders';
 $_['text_order_status']                = 'Order Statuses';
 $_['text_opencart']                    = 'Homepage';
 $_['text_payment']                     = 'Payments';
+
+			$_['text_seopack']                       = 'SEO Pack';
+			$_['text_seoimages']                     = 'SEO Images';
+			$_['text_autolinks']                     = 'Auto Links';
+			$_['text_seoeditor']                     = 'Advanced SEO Editor';
+			$_['text_seoreport']                     = 'SEO Report';
+			
 $_['text_product']                     = 'Products';
 $_['text_profile']                     = 'Profiles';
 $_['text_reports']                     = 'Reports';

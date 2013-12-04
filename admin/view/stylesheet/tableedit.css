@@ -1,0 +1,18 @@
+
+.editbox
+{
+display:none
+}
+.editbox
+{
+font-size:12px;
+width:220px;
+background-color:#ffffcc;
+border:solid 1px #000;
+
+}
+.edit_tr:hover
+{
+background:url(edit.png) right no-repeat #80C8E5;
+cursor:pointer;
+}

@@ -1,0 +1,54 @@
+<modification>
+<id>Store - Meta Keywords</id>
+<version>1.0</version>
+<vqmver>1.1.0</vqmver>
+<author>ovife21</author>
+
+<file name="admin/view/template/setting/store_form.tpl">
+	<operation>
+	<search position="before"><![CDATA[<td><?php echo $entry_meta_description; ?></td>]]></search>
+	<add><![CDATA[<td>Meta Tag Keywords: </td>
+				  <td><textarea name="config_meta_keywords" cols="40" rows="3"><?php echo $config_meta_keywords; ?></textarea></td>
+				</tr>
+				<tr>]]></add>
+	</operation>
+</file>
+<file name="admin/view/template/setting/setting.tpl">
+	<operation>
+	<search position="before"><![CDATA[<td><?php echo $entry_meta_description; ?></td>]]></search>
+	<add><![CDATA[<td>Meta Tag Keywords: </td>
+				  <td><textarea name="config_meta_keywords" cols="40" rows="3"><?php echo $config_meta_keywords; ?></textarea></td>
+				</tr>
+				<tr>]]></add>
+	</operation>
+</file>
+<file name="admin/controller/setting/store.php">
+	<operation>
+	<search position="before"><![CDATA[if (isset($this->request->post['config_meta_description'])) {]]></search>
+	<add><![CDATA[if (isset($this->request->post['config_meta_keywords'])) {
+			$this->data['config_meta_keywords'] = $this->request->post['config_meta_keywords'];
+		} elseif (isset($store_info['config_meta_keywords'])) {
+			$this->data['config_meta_keywords'] = $store_info['config_meta_keywords'];		
+		} else {
+			$this->data['config_meta_keywords'] = '';
+		}]]></add>
+	</operation>
+</file>
+<file name="admin/controller/setting/setting.php">
+	<operation>
+	<search position="before"><![CDATA[if (isset($this->request->post['config_meta_description'])) {]]></search>
+	<add><![CDATA[if (isset($this->request->post['config_meta_keywords'])) {
+			$this->data['config_meta_keywords'] = $this->request->post['config_meta_keywords'];
+		} else {
+			$this->data['config_meta_keywords'] = $this->config->get('config_meta_keywords');
+		}]]></add>
+	</operation>
+</file>
+<file name="catalog/controller/common/home.php">
+	<operation>
+	<search position="before"><![CDATA[$this->document->setDescription]]></search>
+	<add><![CDATA[$this->document->setKeywords($this->config->get('config_meta_keywords'));]]></add>
+	</operation>
+</file>
+
+</modification>

@@ -1,0 +1,24 @@
+<modification>
+
+	<id>SEO Editor</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>ovife21</author>
+	
+	<file name="admin/view/template/common/header.tpl">
+		<operation>
+			<search position="after"><![CDATA[<script type="text/javascript" src="view/javascript/jquery/jquery]]></search>
+			<add><![CDATA[<script type="text/javascript" src="view/javascript/tableedit.js"></script>]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[<link rel="stylesheet" type="text/css" href="view/stylesheet/stylesheet.css" />]]></search>
+			<add><![CDATA[<link rel="stylesheet" type="text/css" href="view/stylesheet/tableedit.css" />]]></add>
+		</operation>		
+	</file>	
+	
+	
+	
+</modification>
+
+
+

@@ -1,0 +1,63 @@
+<modification>
+
+	<id>Metas for Information</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>ovife21</author>
+	
+	<file name="admin/view/template/catalog/information_form.tpl">
+		<operation>
+			<search position="before"><![CDATA[<td><span class="required">*</span> <?php echo $entry_description; ?></td>]]></search>
+			<add><![CDATA[
+				<td>Meta Tag Description:</td>
+                <td><textarea name="information_description[<?php echo $language['language_id']; ?>][meta_description]" cols="40" rows="5"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['meta_description'] : ''; ?></textarea></td>
+              </tr>
+              <tr>
+                <td>Meta Tag Keywords:</td>
+                <td><textarea name="information_description[<?php echo $language['language_id']; ?>][meta_keyword]" cols="40" rows="5"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['meta_keyword'] : ''; ?></textarea></td>
+              </tr>
+              <tr>
+				]]></add>
+		</operation>		
+	</file>
+	<file name="admin/controller/catalog/information.php">
+		<operation>
+			<search position="before"><![CDATA[if (isset($this->request->post['information_description'])) {]]></search>
+			<add><![CDATA[
+				$query = $this->db->query("SHOW COLUMNS FROM " . DB_PREFIX . "information_description WHERE field = 'meta_description'");
+				$exists = 0;
+				foreach ($query->rows as $index) {$exists++;}
+				if (!$exists) {$this->db->query("ALTER TABLE " . DB_PREFIX . "information_description ADD COLUMN `meta_description` varchar(255) NULL DEFAULT '';");}
+				
+				$query = $this->db->query("SHOW COLUMNS FROM " . DB_PREFIX . "information_description WHERE field = 'meta_keyword'");
+				$exists = 0;
+				foreach ($query->rows as $index) {$exists++;}
+				if (!$exists) {$this->db->query("ALTER TABLE " . DB_PREFIX . "information_description ADD COLUMN `meta_keyword` varchar(255) NULL DEFAULT '';");}
+				
+				]]></add>
+		</operation>		
+	</file>
+	<file name="admin/model/catalog/information.php">
+		<operation>
+			<search position="replace"><![CDATA['title'       => $result['title'],]]></search>
+			<add><![CDATA['title'       => $result['title'], 'meta_description'       => $result['meta_description'], 'meta_keyword'       => $result['meta_keyword'], 
+				]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[title = '" . $this->db->escape($value['title']) . "',]]></search>
+			<add><![CDATA[title = '" . $this->db->escape($value['title']) . "', meta_description = '" . $this->db->escape($value['meta_description']) . "', meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "', ]]></add>
+		</operation>		
+	</file>
+	<file name="catalog/controller/information/information.php">
+		<operation>
+			<search position="after"><![CDATA[if ($information_info) {]]></search>
+			<add><![CDATA[
+				$this->document->setKeywords($information_info['meta_keyword']);
+				$this->document->setDescription($information_info['meta_description']);
+			]]></add>
+		</operation>
+	</file>
+</modification>
+
+
+

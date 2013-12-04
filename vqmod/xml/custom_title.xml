@@ -1,0 +1,349 @@
+<modification>
+
+	<id>Custom titles</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>ovife21</author>
+	
+	<file name="admin/language/*/catalog/product.php">
+		<operation>
+			<search position="before"><![CDATA[$_['entry_name']]]></search>
+			<add><![CDATA[$_['entry_custom_title']            = 'Custom title:<br/><span class="help">Leave empty if you want the default title to be displayed</span>';]]></add>
+		</operation>			
+	</file>		
+	<file name="admin/language/*/catalog/category.php">
+		<operation>
+			<search position="before"><![CDATA[$_['entry_name']]]></search>
+			<add><![CDATA[$_['entry_custom_title']            = 'Custom title:<br/><span class="help">Leave empty if you want the default title to be displayed</span>';]]></add>
+		</operation>			
+	</file>	
+	<file name="admin/language/*/catalog/information.php">
+		<operation>
+			<search position="before"><![CDATA[$_['entry_title']]]></search>
+			<add><![CDATA[$_['entry_custom_title']            = 'Custom title:<br/><span class="help">Leave empty if you want the default title to be displayed</span>';]]></add>
+		</operation>			
+	</file>	
+	<file name="admin/view/template/catalog/product_form.tpl">
+		<operation>
+			<search position="before"><![CDATA[<td><?php echo $entry_meta_description; ?></td>]]></search>
+			<add><![CDATA[<td><?php echo $entry_custom_title; ?></td>
+			<td><input type="text" name="product_description[<?php echo $language['language_id']; ?>][custom_title]" size="100" value="<?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['custom_title'] : ''; ?>" /></td>
+              </tr>
+              <tr>]]></add>
+		</operation>			
+	</file>	
+	<file name="admin/view/template/catalog/category_form.tpl">
+		<operation>
+			<search position="before"><![CDATA[<td><?php echo $entry_meta_description; ?></td>]]></search>
+			<add><![CDATA[<td><?php echo $entry_custom_title; ?></td>
+			<td><input type="text" name="category_description[<?php echo $language['language_id']; ?>][custom_title]" size="100" value="<?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['custom_title'] : ''; ?>" /></td>
+              </tr>
+              <tr>]]></add>
+		</operation>			
+	</file>	
+	<file name="admin/view/template/catalog/information_form.tpl">
+		<operation>
+			<search position="before"><![CDATA[<td><span class="required">*</span> <?php echo $entry_description; ?></td>]]></search>
+			<add><![CDATA[<td><?php echo $entry_custom_title; ?></td>
+			<td><input type="text" name="information_description[<?php echo $language['language_id']; ?>][custom_title]" size="100" value="<?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['custom_title'] : ''; ?>" /></td>
+              </tr>
+              <tr>]]></add>
+		</operation>			
+	</file>	
+	<file name="admin/model/catalog/product.php">
+		<operation>
+			<search position="replace"><![CDATA['meta_description' => $result['meta_description']]]></search>
+			<add><![CDATA['custom_title' => $result['custom_title'], 'meta_description' => $result['meta_description']]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[meta_description = '" . $this->db->escape($value['meta_description']) . "',]]></search>
+			<add><![CDATA[custom_title = '" . ((isset($value['custom_title']))?($this->db->escape($value['custom_title'])):'') . "', meta_description = '" . $this->db->escape($value['meta_description']) . "',]]></add>
+		</operation>			
+	</file>
+	<file name="catalog/model/catalog/product.php">
+		<operation error="skip">
+			<search position="replace"><![CDATA[$query->row['meta_keyword'],]]></search>
+			<add><![CDATA[$query->row['meta_keyword'], 'custom_title' => $query->row['custom_title'],]]></add>
+		</operation>							
+	</file>	
+	<file name="admin/model/catalog/category.php">
+		<operation>
+			<search position="replace"><![CDATA['meta_description' => $result['meta_description']]]></search>
+			<add><![CDATA['custom_title' => $result['custom_title'], 'meta_description' => $result['meta_description']]]></add>
+		</operation>		
+		<operation>
+			<search position="replace"><![CDATA[meta_description = '" . $this->db->escape($value['meta_description']) . "',]]></search>
+			<add><![CDATA[custom_title = '" . ((isset($value['custom_title']))?($this->db->escape($value['custom_title'])):'') . "', meta_description = '" . $this->db->escape($value['meta_description']) . "',]]></add>
+		</operation>			
+	</file>	
+	<file name="admin/model/catalog/information.php">
+		<operation>
+			<search position="replace"><![CDATA['title'       => $result['title'],]]></search>
+			<add><![CDATA['custom_title' => $result['custom_title'], 'title'       => $result['title'],]]></add>
+		</operation>		
+		<operation>
+			<search position="replace"><![CDATA[title = '" . $this->db->escape($value['title']) . "',]]></search>
+			<add><![CDATA[custom_title = '" . ((isset($value['custom_title']))?($this->db->escape($value['custom_title'])):'') . "', title = '" . $this->db->escape($value['title']) . "',]]></add>
+		</operation>			
+	</file>		
+	<file name="admin/controller/catalog/product.php">
+		<operation>
+			<search position="before"><![CDATA[$this->data['entry_meta_description'] = $this->language->get('entry_meta_description');]]></search>
+			<add><![CDATA[$this->data['entry_custom_title'] = $this->language->get('entry_custom_title');]]></add>
+		</operation>		
+		<operation>
+			<search position="before"><![CDATA[if (isset($this->error['meta_description'])) {]]></search>
+			<add><![CDATA[if (isset($this->error['custom_title'])) {
+					$this->data['error_custom_title'] = $this->error['custom_title'];
+				} else {
+					$this->data['error_custom_title'] = array();
+				}	]]></add>
+		</operation>			
+	</file>	
+	<file name="admin/controller/catalog/category.php">
+		<operation>
+			<search position="before"><![CDATA[$this->data['entry_meta_description'] = $this->language->get('entry_meta_description');]]></search>
+			<add><![CDATA[$this->data['entry_custom_title'] = $this->language->get('entry_custom_title');]]></add>
+		</operation>		
+	</file>	
+	<file name="admin/controller/catalog/information.php">
+		<operation>
+			<search position="before"><![CDATA[$this->data['entry_title'] = $this->language->get('entry_title');]]></search>
+			<add><![CDATA[$this->data['entry_custom_title'] = $this->language->get('entry_custom_title');]]></add>
+		</operation>		
+	</file>	
+	<file name="catalog/controller/product/product.php">
+		<operation>
+			<search position="replace"><![CDATA[$this->document->setTitle($product_info['name']);]]></search>
+			<add><![CDATA[($product_info['custom_title'] == '')?$this->document->setTitle($product_info['name']):$this->document->setTitle($product_info['custom_title']);]]></add>
+		</operation>		
+	</file>	
+	<file name="catalog/controller/product/category.php">
+		<operation>
+			<search position="replace"><![CDATA[$this->document->setTitle($category_info['name']);]]></search>
+			<add><![CDATA[($category_info['custom_title'] == '')?$this->document->setTitle($category_info['name']):$this->document->setTitle($category_info['custom_title']);]]></add>
+		</operation>		
+	</file>	
+	<file name="catalog/controller/information/information.php">
+		<operation>
+			<search position="replace"><![CDATA[$this->document->setTitle($information_info['title']);]]></search>
+			<add><![CDATA[($information_info['custom_title'] == '')?$this->document->setTitle($information_info['title']):$this->document->setTitle($information_info['custom_title']);]]></add>
+		</operation>		
+	</file>	
+	<file name="admin/view/template/catalog/seopack.tpl">
+		<operation>
+			<search position="before"><![CDATA[<p><a onclick="clearseo('Products Tags', '<?php echo $cleartags; ?>');" class="button" style="background:red">Clear Tags</a></p>]]></search>
+			<add><![CDATA[<p><a onclick="clearseo('Product Custom Titles', '<?php echo $cleartitles; ?>');" class="button" style="background:red">Clear Custom Titles</a></p>]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[<td class="left"><b>Tags Generator</b></td>]]></search>
+			<add><![CDATA[<td class="left"><b>Product Custom Titles Generator</b></td>
+                <td class="left"><span class="help">Product Custom Titles Generator generates custom titles for products from relevant keywords from product(%p) and category(%c) names.<br><br>
+				<b>Parameters</b><br>
+				There are available the following parameters and they will be replaced by their actual value: <b>%p</b> - product's name, <b>%c</b> - category's name, <b>%m</b> - model, <b>%s</b> - product's sku, <b>%u</b> - product's upc, <b>%b</b> - product's brand and <b>%$</b> - product's price.<br>
+				<b>Example: %p (%m) by www.mysite.com</b> - will generate the following cutom title for a product called 'iPod' with model = 'iPod4': <b>iPod (iPod4) by www.mysite.com</b>.<br>				
+				<i>Before generating custom titles, if you have modified parameters, don't forget to save them using Save Parameters button.</i>	
+				</span></td>
+                <td class="left"><input type="text" name="parameters[ctitles]" value="<?php if (isset($parameters['ctitles'])) echo $parameters['ctitles'];?>" size="10"/></td>
+                <td class="right">
+					<?php if (file_exists(DIR_APPLICATION.'custom_title_generator.php')) { ?>
+					<a onclick="location = 'custom_title_generator.php?token=<?php echo $this->session->data['token']; ?>'" class="button">Generate</a>
+					<?php } else { ?>
+					<a onclick="alert('Custom Titles Generator is not installed!\nYou can purchase the whole Opencart SEO Pack PRO:\n http://www.opencart.com/index.php?route=extension/extension/info&extension_id=6182');" class="button" style="background:lightgrey">Generate</a>
+					<?php } ?>
+				</td>
+              </tr>
+            </tbody>
+			
+			<tbody>
+              <tr>]]></add>
+		</operation>		
+	</file>	
+	<file name="admin/controller/catalog/seopack.php">
+		<operation>
+			<search position="before"><![CDATA[public function cleartags() {]]></search>
+			<add><![CDATA[public function cleartitles() {
+	
+		$query = $this->db->query("update " . DB_PREFIX . "product_description set custom_title = '';");
+		
+		$this->session->data['success'] = "Custom Titles were deleted.";
+		
+		$this->redirect($this->url->link('catalog/seopack', 'token=' . $this->session->data['token'], 'SSL'));
+	
+			}]]></add>
+		</operation>	
+		<operation>
+			<search position="before"><![CDATA[$this->data['cleartags']]]></search>
+			<add><![CDATA[$this->data['cleartitles'] = $this->url->link('catalog/seopack/cleartitles', 'token=' . $this->session->data['token'], 'SSL');]]></add>
+		</operation>		
+	</file>	
+	<file name="admin/controller/catalog/seoedit.php">
+		<operation>
+			<search position="before"><![CDATA[$meta_keyword = $this->db->escape($_POST['meta_keyword']);]]></search>
+			<add><![CDATA[$custom_title = $this->db->escape($_POST['custom_title']);]]></add>
+		</operation>		
+		<operation>
+			<search position="before"><![CDATA[$query = $this->db->query("update " . DB_PREFIX . "product_description set meta_keyword = '$meta_keyword' where product_id = $id and language_id = $language_id;");]]></search>
+			<add><![CDATA[$query = $this->db->query("update " . DB_PREFIX . "product_description set custom_title = '$custom_title' where product_id = $id and language_id = $language_id;");]]></add>
+		</operation>		
+	</file>
+	<file name="admin/view/template/catalog/seoeditor.tpl">
+		<operation>
+			<search position="before"><![CDATA[<td class="left"  style="width:220px;"><?php if ($sort == 'meta_keyword') { ?>]]></search>
+			<add><![CDATA[
+			<td class="left"  style="width:220px;"><?php if ($sort == 'custom_title') { ?>
+                <a href="<?php echo $sort_custom_title; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_custom_title; ?></a>
+                <?php } else { ?>
+                <a href="<?php echo $sort_custom_title; ?>"><?php echo $column_custom_title; ?></a>
+                <?php } ?></td>
+			]]></add>
+		</operation>		
+		<operation>
+			<search position="before"><![CDATA[<td><input type="text" name="filter_meta_keyword" value="<?php echo $filter_meta_keyword; ?>" /></td>]]></search>
+			<add><![CDATA[<td><input type="text" name="filter_custom_title" value="<?php echo $filter_custom_title; ?>" /></td>]]></add>
+		</operation>		
+		<operation>
+			<search position="before"><![CDATA[<?php if ($product['meta_keyword'] <> -1) { ?>]]></search>
+			<add><![CDATA[
+			<?php if ($product['custom_title'] <> -1) { ?>
+				   <td class="edit_td">
+					<span id="custom_title_<?php echo $product['type'].$product['id']; ?>" class="text"><?php echo $product['custom_title']; ?></span>
+					<textarea class="editbox" id="custom_title_input_<?php echo $product['type'].$product['id']; ?>"/><?php echo $product['custom_title']; ?></textarea>
+				  </td>
+			  <?php } else { ?>
+					<td class="left" style="background:lightgrey"></td>
+			  <?php } ?>
+			  ]]></add>
+		</operation>		
+		<operation>
+			<search position="replace"><![CDATA[textarea class="editbox"]]></search>
+			<add><![CDATA[textarea style="width:180px;" class="editbox"]]></add>
+		</operation>		
+		<operation>
+			<search position="before"><![CDATA[var filter_meta_keyword = $('input[name=\'filter_meta_keyword\']').attr('value');]]></search>
+			<add><![CDATA[
+			var filter_custom_title = $('input[name=\'filter_custom_title\']').attr('value');
+	
+			if (filter_custom_title) {
+				url += '&filter_custom_title=' + encodeURIComponent(filter_custom_title);
+			}]]></add>
+		</operation>		
+		<operation>
+			<search position="before"><![CDATA[$('input[name=\'filter_meta_keyword\']').autocomplete({]]></search>
+			<add><![CDATA[
+			$('input[name=\'filter_custom_title\']').autocomplete({
+				delay: 0,
+				source: function(request, response) {
+					$.ajax({
+						url: 'index.php?route=catalog/seoeditor/autocomplete&token=<?php echo $token; ?>&filter_custom_title=' +  encodeURIComponent(request.term),
+						dataType: 'json',
+						success: function(json) {		
+							response($.map(json, function(item) {
+								return {
+									label: item.custom_title,
+									value: item.id
+								}
+							}));
+						}
+					});
+				}, 
+				select: function(event, ui) {
+					$('input[name=\'filter_custom_title\']').val(ui.item.label);
+									
+					return false;
+				}
+			});
+			]]></add>
+		</operation>		
+	</file>
+	<file name="admin/model/catalog/seoeditor.php">
+		<operation>
+			<search position="before" index="1,5"><![CDATA[if (!empty($data['filter_meta_keyword'])) {]]></search>
+			<add><![CDATA[if (!empty($data['filter_custom_title'])) {
+				$sql .= " AND LCASE(pd.custom_title) LIKE '%" . $this->db->escape(utf8_strtolower($data['filter_custom_title'])) . "%'";
+			}]]></add>
+		</operation>		
+		<operation>
+			<search position="replace"><![CDATA[pd.meta_keyword,]]></search>
+			<add><![CDATA[pd.meta_keyword, pd.custom_title,]]></add>
+		</operation>	
+		<operation>
+			<search position="replace"><![CDATA['meta_keyword',]]></search>
+			<add><![CDATA['meta_keyword', 'custom_title', ]]></add>
+		</operation>	
+		<operation>
+			<search position="replace"><![CDATA[cd.meta_keyword,]]></search>
+			<add><![CDATA[cd.meta_keyword, -1,]]></add>
+		</operation>	
+		<operation>
+			<search position="replace"><![CDATA[-1, -1, -1]]></search>
+			<add><![CDATA[-1, -1, -1, -1]]></add>
+		</operation>		
+		<operation>
+			<search position="after"><![CDATA[$sql .= " AND 1=2";]]></search>
+			<add><![CDATA[
+			}
+			if (!empty($data['filter_custom_title'])) {
+				$sql .= " AND 1=2";]]></add>
+		</operation>		
+	</file>	
+	<file name="admin/controller/catalog/seoeditor.php">
+		<operation>
+			<search position="before" index="1,4"><![CDATA[if (isset($this->request->get['filter_meta_keyword'])) {]]></search>
+			<add><![CDATA[
+			if (isset($this->request->get['filter_custom_title'])) {
+				$filter_custom_title = $this->request->get['filter_custom_title'];
+			} else {
+				$filter_custom_title = null;
+			}]]></add>
+		</operation>		
+		<operation>
+			<search position="before" index="2,3"><![CDATA[if (isset($this->request->get['filter_meta_keyword'])) {]]></search>
+			<add><![CDATA[
+			if (isset($this->request->get['filter_custom_title'])) {
+				$url .= '&filter_custom_title=' . $this->request->get['filter_custom_title'];
+			}		]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA['filter_meta_keyword' => $filter_meta_keyword,]]></search>
+			<add><![CDATA[
+			'filter_custom_title' => $filter_custom_title,		]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA['meta_keyword'      => $result['meta_keyword'],]]></search>
+			<add><![CDATA[
+			'custom_title'      => $result['custom_title'],]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[$this->data['column_meta_keyword'] = $this->language->get('column_meta_keyword');]]></search>
+			<add><![CDATA[
+			$this->data['column_custom_title'] = 'Custom Title';]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[$this->data['sort_meta_keyword'] = $this->url->link('catalog/seoeditor', 'token=' . $this->session->data['token'] . '&sort=meta_keyword' . $url, 'SSL');]]></search>
+			<add><![CDATA[
+			$this->data['sort_custom_title'] = $this->url->link('catalog/seoeditor', 'token=' . $this->session->data['token'] . '&sort=custom_title' . $url, 'SSL');]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[$this->data['filter_meta_keyword'] = $filter_meta_keyword;]]></search>
+			<add><![CDATA[
+			$this->data['filter_custom_title'] = $filter_custom_title;]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[|| isset($this->request->get['filter_meta_keyword']) ]]></search>
+			<add><![CDATA[|| isset($this->request->get['filter_meta_keyword']) || isset($this->request->get['filter_custom_title']) ]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA['filter_meta_keyword'      => $filter_meta_keyword,]]></search>
+			<add><![CDATA['filter_custom_title'      => $filter_custom_title,]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA['meta_keyword'      => html_entity_decode($result['meta_keyword'], ENT_QUOTES, 'UTF-8'),]]></search>
+			<add><![CDATA['custom_title'      => html_entity_decode($result['custom_title'], ENT_QUOTES, 'UTF-8'),]]></add>
+		</operation>
+		
+	</file>	
+	
+
+</modification>
+

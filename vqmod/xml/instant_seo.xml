@@ -1,0 +1,478 @@
+<modification>
+
+	<id>Instant SEO</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>ovife21</author>
+	
+	<file name="admin/view/template/catalog/seopack.tpl">
+		<operation>
+			<search position="before"><![CDATA[</table>]]></search>
+			<add><![CDATA[
+			<tbody>
+              <tr>
+                <td class="left" colspan="2">
+				Auto create SEO URLS for products/categories/brands/info on insert if seo urls don't exist				
+				</td>
+				<td class="right" colspan="2">
+				<?php if ((isset($parameters['autourls'])) && ($parameters['autourls'])) { ?>
+                <input type="radio" name="parameters[autourls]" value="1" checked="checked" /> Yes                
+                <input type="radio" name="parameters[autourls]" value="0" /> No
+                <?php } else { ?>
+                <input type="radio" name="parameters[autourls]" value="1" /> Yes
+                <input type="radio" name="parameters[autourls]" value="0" checked="checked" /> No
+                <?php } ?>
+				</td>
+			  </tr>
+			  <tr>
+                <td  class="left" colspan="2">
+				Auto create Meta Keywords for products on insert if meta keywords don't exist
+				</td>
+				<td class="right" colspan="2">
+				<?php if ((isset($parameters['autokeywords'])) && ($parameters['autokeywords'])) { ?>
+                <input type="radio" name="parameters[autokeywords]" value="1" checked="checked" /> Yes                
+                <input type="radio" name="parameters[autokeywords]" value="0" /> No
+                <?php } else { ?>
+                <input type="radio" name="parameters[autokeywords]" value="1" /> Yes
+                <input type="radio" name="parameters[autokeywords]" value="0" checked="checked" /> No
+                <?php } ?>
+				</td>
+			  </tr>
+			  <tr>
+                <td class="left" colspan="2">
+				Auto create Meta Descriptions for products on insert if meta descriptions don't exist
+				</td>
+				<td class="right" colspan="2">
+				<?php if ((isset($parameters['autometa'])) && ($parameters['autometa'])) { ?>
+                <input type="radio" name="parameters[autometa]" value="1" checked="checked" /> Yes                
+                <input type="radio" name="parameters[autometa]" value="0" /> No
+                <?php } else { ?>
+                <input type="radio" name="parameters[autometa]" value="1" /> Yes
+                <input type="radio" name="parameters[autometa]" value="0" checked="checked" /> No
+                <?php } ?>
+				</td>
+			  </tr>
+			  <tr>
+                <td class="left" colspan="2">
+				Auto create Tags for products on insert if tags don't exist
+				</td>
+				<td class="right" colspan="2">
+				<?php if ((isset($parameters['autotags'])) && ($parameters['autotags'])) { ?>
+                <input type="radio" name="parameters[autotags]" value="1" checked="checked" /> Yes                
+                <input type="radio" name="parameters[autotags]" value="0" /> No
+                <?php } else { ?>
+                <input type="radio" name="parameters[autotags]" value="1" /> Yes
+                <input type="radio" name="parameters[autotags]" value="0" checked="checked" /> No
+                <?php } ?>
+				</td>
+			  </tr>			  
+            </tbody>
+			]]></add>
+		</operation>		
+	</file>
+	<file name="admin/model/catalog/product.php">
+		<operation>
+			<search position="before"><![CDATA[$this->cache->delete('product');]]></search>
+			<add><![CDATA[
+				
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "setting WHERE `group` = 'seopack'");
+			
+				foreach ($query->rows as $result) {
+						if (!$result['serialized']) {
+							$data[$result['key']] = $result['value'];
+						} else {
+							$data[$result['key']] = unserialize($result['value']);
+						}
+					}
+					
+				if (isset($data)) {$parameters = $data['parameters'];}
+					else {
+						$parameters['keywords'] = '%c%p';
+						$parameters['tags'] = '%c%p';
+						$parameters['metas'] = '%p - %f';
+						}
+				
+				
+				if (isset($parameters['ext'])) { $ext = $parameters['ext'];}
+					else {$ext = '';}
+					
+				if ((isset($parameters['autokeywords'])) && ($parameters['autokeywords']))
+					{	
+						$query = $this->db->query("select pd.name as pname, cd.name as cname, pd.language_id as language_id, pd.product_id as product_id, p.sku as sku, p.model as model, p.upc as upc, m.name as brand  from " . DB_PREFIX . "product_description pd
+								left join " . DB_PREFIX . "product_to_category pc on pd.product_id = pc.product_id
+								inner join " . DB_PREFIX . "product p on pd.product_id = p.product_id
+								left join " . DB_PREFIX . "category_description cd on cd.category_id = pc.category_id and cd.language_id = pd.language_id
+								left join " . DB_PREFIX . "manufacturer m on m.manufacturer_id = p.manufacturer_id
+								where p.product_id = '" . (int)$product_id . "';");
+					
+								
+								//die('z');
+						foreach ($query->rows as $product) {
+														
+							$bef = array("%", "_","\"","'","\\");
+							$aft = array("", " ", " ", " ", "");
+							
+							$included = explode('%', str_replace(array(' ',','), '', $parameters['keywords']));
+							
+							$tags = array();
+							
+							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+							
+							$keywords = '';
+							
+							foreach ($tags as $tag)
+								{
+								if (strlen($tag) > 2) 
+									{
+									
+									$keywords = $keywords.' '.strtolower($tag);
+									
+									}
+								}
+								
+							
+							$exists = $this->db->query("select count(*) as times from " . DB_PREFIX . "product_description where product_id = ".$product['product_id']." and language_id = ".$product['language_id']." and meta_keyword like '%".$keywords."%';");
+							
+									foreach ($exists->rows as $exist)
+										{
+										$count = $exist['times'];
+										}
+							$exists = $this->db->query("select length(meta_keyword) as leng from " . DB_PREFIX . "product_description where product_id = ".$product['product_id']." and language_id = ".$product['language_id'].";");
+							
+									foreach ($exists->rows as $exist)
+										{
+										$leng = $exist['leng'];
+										}
+
+							if (($count == 0) && ($leng < 255)) {$this->db->query("update " . DB_PREFIX . "product_description set meta_keyword = concat(meta_keyword, '". htmlspecialchars($keywords) ."') where product_id = ".$product['product_id']." and language_id = ".$product['language_id'].";");}	
+								
+														
+							}
+					}
+				if ((isset($parameters['autometa'])) && ($parameters['autometa']))
+					{
+						$query = $this->db->query("select pd.name as pname, p.price as price, cd.name as cname, pd.description as pdescription, pd.language_id as language_id, pd.product_id as product_id, p.model as model, p.sku as sku, p.upc as upc, m.name as brand from " . DB_PREFIX . "product_description pd
+								left join " . DB_PREFIX . "product_to_category pc on pd.product_id = pc.product_id
+								inner join " . DB_PREFIX . "product p on pd.product_id = p.product_id
+								left join " . DB_PREFIX . "category_description cd on cd.category_id = pc.category_id and cd.language_id = pd.language_id
+								left join " . DB_PREFIX . "manufacturer m on m.manufacturer_id = p.manufacturer_id
+								where p.product_id = '" . (int)$product_id . "';");
+
+						foreach ($query->rows as $product) {
+														
+							$bef = array("%", "_","\"","'","\\", "\r", "\n");
+							$aft = array("", " ", " ", " ", "", "", "");
+							
+							$ncategory = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))));
+							$nproduct = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))));
+							$model = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))));
+							$sku = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))));
+							$upc = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))));
+							$content = strip_tags(html_entity_decode($product['pdescription']));
+							$pos = strpos($content, '.');							   
+							if($pos === false) {}
+								else { $content =  substr($content, 0, $pos+1);	}
+							$sentence = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft, $content))));
+							$brand = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))));
+							$price = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft, number_format($product['price'], 2)))));
+							
+							$bef = array("%c", "%p", "%m", "%s", "%u", "%f", "%b", "%$");
+							$aft = array($ncategory, $nproduct, $model, $sku, $upc, $sentence, $brand, $price);
+							
+							$meta_description = str_replace($bef, $aft,  $parameters['metas']);
+							
+							$exists = $this->db->query("select count(*) as times from " . DB_PREFIX . "product_description where product_id = ".$product['product_id']." and language_id = ".$product['language_id']." and meta_description not like '%".htmlspecialchars($meta_description)."%';");
+							
+									foreach ($exists->rows as $exist)
+										{
+										$count = $exist['times'];
+										}
+							
+							if ($count) {$this->db->query("update " . DB_PREFIX . "product_description set meta_description = concat(meta_description, '". htmlspecialchars($meta_description) ."') where product_id = ".$product['product_id']." and language_id = ".$product['language_id'].";");}			
+														
+							}
+					}
+				if ((isset($parameters['autotags'])) && ($parameters['autotags']))
+					{
+					$query = $this->db->query("select pd.name as pname, pd.tag, cd.name as cname, pd.language_id as language_id, pd.product_id as product_id, p.sku as sku, p.model as model, p.upc as upc, m.name as brand from " . DB_PREFIX . "product_description pd
+							inner join " . DB_PREFIX . "product_to_category pc on pd.product_id = pc.product_id
+							inner join " . DB_PREFIX . "product p on pd.product_id = p.product_id
+							inner join " . DB_PREFIX . "category_description cd on cd.category_id = pc.category_id and cd.language_id = pd.language_id
+							left join " . DB_PREFIX . "manufacturer m on m.manufacturer_id = p.manufacturer_id
+							where p.product_id = '" . (int)$product_id . "';");
+					
+					foreach ($query->rows as $product) {
+						
+						$newtags ='';
+						
+						$included = explode('%', str_replace(array(' ',','), '', $parameters['tags']));
+						
+						$tags = array();
+						
+						
+						$bef = array("%", "_","\"","'","\\");
+						$aft = array("", " ", " ", " ", "");
+						
+							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+							
+							foreach ($tags as $tag)
+								{
+								if (strlen($tag) > 2) 
+									{
+									if ((strpos($product['tag'], strtolower($tag)) === false) && (strpos($newtags, strtolower($tag)) === false))
+										{
+											$newtags .= ' '.strtolower($tag).',';											
+										}			
+									}
+								}
+							
+														
+							if ($product['tag']) {
+								$newtags = trim(mysql_real_escape_string($product['tag']) . $newtags,' ,');
+								$this->db->query("update " . DB_PREFIX . "product_description set tag = '$newtags' where product_id = '". $product['product_id'] ."' and language_id = '". $product['language_id'] ."';");
+								}
+								else {
+								$newtags = trim($newtags,' ,');
+								$this->db->query("update " . DB_PREFIX . "product_description set tag = '$newtags' where product_id = '". $product['product_id'] ."' and language_id = '". $product['language_id'] ."';");
+								}
+																				
+						}
+						
+					}
+				if ((isset($parameters['autourls'])) && ($parameters['autourls']))
+					{
+						require_once(DIR_APPLICATION . 'controller/catalog/seopack.php');
+						$seo = new ControllerCatalogSeoPack($this->registry);
+						
+						$query = $this->db->query("SELECT pd.product_id, pd.name, pd.language_id ,l.code FROM ".DB_PREFIX."product p 
+								inner join ".DB_PREFIX."product_description pd ON p.product_id = pd.product_id 
+								inner join ".DB_PREFIX."language l on l.language_id = pd.language_id 
+								where p.product_id = '" . (int)$product_id . "';");
+
+						
+						foreach ($query->rows as $product_row ){	
+
+							
+							if( strlen($product_row['name']) > 1 ){
+							
+								$slug = $seo->generateSlug($product_row['name']).$ext;
+								$exist_query = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.query = 'product_id=" . $product_row['product_id'] . "' and language_id=".$product_row['language_id']);
+								
+								if(!$exist_query->num_rows){
+									
+									$exist_keyword = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.keyword = '" . $slug . "'");
+									if($exist_keyword->num_rows){ 
+										$exist_keyword_lang = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.keyword = '" . $slug . "' AND " . DB_PREFIX . "url_alias.query <> 'product_id=" . $product_row['product_id'] . "'");
+										if($exist_keyword_lang->num_rows){
+												$slug = $seo->generateSlug($product_row['name']).'-'.rand().$ext;
+											}
+											else
+											{
+												$slug = $seo->generateSlug($product_row['name']).'-'.$product_row['code'].$ext;
+											}
+										}
+										
+									
+									$add_query = "INSERT INTO " . DB_PREFIX . "url_alias (query, keyword, language_id) VALUES ('product_id=" . $product_row['product_id'] . "', '" . $slug . "', " . $product_row['language_id'] . ")";
+									$this->db->query($add_query);
+									
+								}
+							}
+						}
+					}
+				
+			]]></add>
+		</operation>
+		
+	</file>
+	<file name="admin/model/catalog/category.php">
+		<operation>
+			<search position="before"><![CDATA[$this->cache->delete('category');]]></search>
+			<add><![CDATA[
+			
+				require_once(DIR_APPLICATION . 'controller/catalog/seopack.php');
+				$seo = new ControllerCatalogSeoPack($this->registry);
+				
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "setting WHERE `group` = 'seopack'");
+			
+				foreach ($query->rows as $result) {
+						if (!$result['serialized']) {
+							$data[$result['key']] = $result['value'];
+						} else {
+							$data[$result['key']] = unserialize($result['value']);
+						}
+					}
+					
+				if (isset($data)) {$parameters = $data['parameters'];}
+				
+				if ((isset($parameters['autourls'])) && ($parameters['autourls']))
+					{
+						require_once(DIR_APPLICATION . 'controller/catalog/seopack.php');
+						$seo = new ControllerCatalogSeoPack($this->registry);
+						
+						$query = $this->db->query("SELECT cd.category_id, cd.name, cd.language_id, l.code FROM ".DB_PREFIX."category c 
+								inner join ".DB_PREFIX."category_description cd on c.category_id = cd.category_id 
+								inner join ".DB_PREFIX."language l on l.language_id = cd.language_id
+								where c.category_id = '" . (int)$category_id . "'");
+
+						
+						foreach ($query->rows as $category_row){	
+
+							
+							if( strlen($category_row['name']) > 1 ){
+							
+								$slug = $seo->generateSlug($category_row['name']);
+								$exist_query =  $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.query = 'category_id=" . $category_row['category_id'] . "' and language_id=".$category_row['language_id']);
+								
+								if(!$exist_query->num_rows){
+									
+									$exist_keyword = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.keyword = '" . $slug . "'");
+									if($exist_keyword->num_rows){ 
+										$exist_keyword_lang = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.keyword = '" . $slug . "' AND " . DB_PREFIX . "url_alias.query <> 'category_id=" . $category_row['category_id'] . "'");
+										if($exist_keyword_lang->num_rows){
+												$slug = $seo->generateSlug($category_row['name']).'-'.rand();
+											}
+											else
+											{
+												$slug = $seo->generateSlug($category_row['name']).'-'.$category_row['code'];
+											}
+										}
+									
+										
+									
+									$add_query = "INSERT INTO " . DB_PREFIX . "url_alias (query, keyword,language_id) VALUES ('category_id=" . $category_row['category_id'] . "', '" . $slug . "', " . $category_row['language_id'] . ")";
+									$this->db->query($add_query);
+									
+								}
+							}
+						}
+					}
+			]]></add>
+		</operation>		
+	</file>
+	<file name="admin/model/catalog/information.php">
+		<operation>
+			<search position="before"><![CDATA[$this->cache->delete('information');]]></search>
+			<add><![CDATA[
+				
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "setting WHERE `group` = 'seopack'");
+			
+				foreach ($query->rows as $result) {
+						if (!$result['serialized']) {
+							$data[$result['key']] = $result['value'];
+						} else {
+							$data[$result['key']] = unserialize($result['value']);
+						}
+					}
+					
+				if (isset($data)) {$parameters = $data['parameters'];}
+				
+				if (isset($parameters['ext'])) { $ext = $parameters['ext'];}
+					else {$ext = '';}
+				
+				if ((isset($parameters['autourls'])) && ($parameters['autourls']))
+					{	
+						require_once(DIR_APPLICATION . 'controller/catalog/seopack.php');
+						$seo = new ControllerCatalogSeoPack($this->registry);
+						
+						$query = $this->db->query("SELECT id.information_id, id.title, id.language_id, l.code FROM ".DB_PREFIX."information i
+							inner join ".DB_PREFIX."information_description id on i.information_id = id.information_id 
+							inner join ".DB_PREFIX."language l on l.language_id = id.language_id
+							where i.information_id = '" . (int)$information_id . "';");
+						
+						foreach ($query->rows as $info_row){
+							
+							if( strlen($info_row['title']) > 1 ){
+								
+								$slug = $seo->generateSlug($info_row['title']).$ext;
+								$exist_query = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.query = 'information_id=" . $info_row['information_id'] . "'  and language_id=".$info_row['language_id']);
+								
+								if(!$exist_query->num_rows){
+									
+									$exist_keyword = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.keyword = '" . $slug . "'");
+									if($exist_keyword->num_rows){ 
+										$exist_keyword_lang = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.keyword = '" . $slug . "' AND " . DB_PREFIX . "url_alias.query <> 'information_id=" . $info_row['information_id'] . "'");
+										if($exist_keyword_lang->num_rows){
+												$slug = $seo->generateSlug($info_row['title']).'-'.rand();
+											}
+											else
+											{
+												$slug = $seo->generateSlug($info_row['title']).'-'.$info_row['code'];
+											}
+										}	
+									
+									$add_query = "INSERT INTO " . DB_PREFIX . "url_alias (query, keyword, language_id) VALUES ('information_id=" . $info_row['information_id'] . "', '" . $slug . "', " . $info_row['language_id'] . ")";
+									$this->db->query($add_query);
+									
+								}
+							}
+						}										
+					}
+				
+				
+			]]></add>
+		</operation>		
+	</file>
+	<file name="admin/model/catalog/manufacturer.php">
+		<operation>
+			<search position="before"><![CDATA[$this->cache->delete('manufacturer');]]></search>
+			<add><![CDATA[
+				
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "setting WHERE `group` = 'seopack'");
+			
+				foreach ($query->rows as $result) {
+						if (!$result['serialized']) {
+							$data[$result['key']] = $result['value'];
+						} else {
+							$data[$result['key']] = unserialize($result['value']);
+						}
+					}
+					
+				if (isset($data)) {$parameters = $data['parameters'];}
+				
+				if ((isset($parameters['autourls'])) && ($parameters['autourls']))
+					{	
+						require_once(DIR_APPLICATION . 'controller/catalog/seopack.php');
+						$seo = new ControllerCatalogSeoPack($this->registry);
+						
+						$query = $this->db->query("SELECT l.language_id, m.name, m.manufacturer_id, l.code from ".DB_PREFIX."manufacturer m 
+						join ".DB_PREFIX."language l
+						where m.manufacturer_id = '" . (int)$manufacturer_id . "';");
+						
+
+						foreach ($query->rows as $manufacturer_row){	
+
+							
+							if( strlen($manufacturer_row['name']) > 1 ){
+								
+								$slug = $seo->generateSlug($manufacturer_row['name'].'-'.$manufacturer_row['code']);
+								$exist_query = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.query = 'manufacturer_id=" . $manufacturer_row['manufacturer_id'] . "' and language_id=".$manufacturer_row['language_id']);
+								
+								if(!$exist_query->num_rows){
+									
+									$exist_keyword = $this->db->query("SELECT query FROM " . DB_PREFIX . "url_alias WHERE " . DB_PREFIX . "url_alias.keyword = '" . $slug . "'");
+									if($exist_keyword->num_rows){ $slug = $seo->generateSlug($manufacturer_row['name']).'-'.rand();}
+										
+										
+									$add_query = "INSERT INTO " . DB_PREFIX . "url_alias (query, keyword,language_id) VALUES ('manufacturer_id=" . $manufacturer_row['manufacturer_id'] . "', '" . $slug . "', " . $manufacturer_row['language_id'] . ")";
+									$this->db->query($add_query);
+									
+								}
+							}
+						}									
+					}
+				
+			]]></add>
+		</operation>		
+	</file>
+</modification>

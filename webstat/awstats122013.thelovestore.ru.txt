@@ -9,31 +9,31 @@ AWSTATS DATA FILE 6.95 (build 1.943)
 BEGIN_MAP 27
 POS_GENERAL 1961                
 POS_TIME 2647                
-POS_VISITOR 3308                
-POS_DAY 3452                
-POS_DOMAIN 3597                
-POS_LOGIN 3821                
-POS_ROBOT 3976                
-POS_WORMS 4150                
-POS_EMAILSENDER 4281                
-POS_EMAILRECEIVER 4424                
-POS_SESSION 4500                
-POS_SIDER 4637                
-POS_FILETYPES 4807                
-POS_OS 4900                
-POS_BROWSER 4948                
-POS_SCREENSIZE 5019                
-POS_UNKNOWNREFERER 5093                
-POS_UNKNOWNREFERERBROWSER 5180                
-POS_ORIGIN 5262                
-POS_SEREFERRALS 5392                
-POS_PAGEREFS 5536                
-POS_SEARCHWORDS 5684                
-POS_KEYWORDS 5836                
+POS_VISITOR 7143                
+POS_DAY 7614                
+POS_DOMAIN 3390                
+POS_LOGIN 3622                
+POS_ROBOT 3777                
+POS_WORMS 3987                
+POS_EMAILSENDER 4118                
+POS_EMAILRECEIVER 4261                
+POS_SESSION 7756                
+POS_SIDER 7941                
+POS_FILETYPES 4396                
+POS_OS 4634                
+POS_BROWSER 4730                
+POS_SCREENSIZE 4940                
+POS_UNKNOWNREFERER 5014                
+POS_UNKNOWNREFERERBROWSER 5101                
+POS_ORIGIN 5183                
+POS_SEREFERRALS 5320                
+POS_PAGEREFS 5464                
+POS_SEARCHWORDS 5612                
+POS_KEYWORDS 5764                
 POS_MISC 2311                
-POS_ERRORS 5895                
-POS_CLUSTER 3677                
-POS_SIDER_404 5970                
+POS_ERRORS 5823                
+POS_CLUSTER 3478                
+POS_SIDER_404 5962                
 END_MAP
 
 # LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
@@ -45,14 +45,14 @@ END_MAP
 # MonthHostsKnown   = Number of hosts known
 # MonthHostsUnKnown = Number of hosts unknown
 BEGIN_GENERAL 8
-LastLine 20131201000211 2872 857821 25432179992760
+LastLine 20131203233504 1638 497219 28262570927728
 FirstTime 20131201000022
-LastTime 20131201000210
-LastUpdate 20131201000311 2872 0 2872 0 0
-TotalVisits 1                   
-TotalUnique 1                   
+LastTime 20131203233503
+LastUpdate 20131204000311 1638 0 1638 0 0
+TotalVisits 20                  
+TotalUnique 9                   
 MonthHostsKnown 0                   
-MonthHostsUnknown 1                   
+MonthHostsUnknown 9                   
 END_GENERAL
 
 # Misc ID - Pages - Hits - Bandwidth
@@ -62,7 +62,7 @@ JavaEnabled 0 0 0
 JavascriptDisabled 0 0 0
 PDFSupport 0 0 0
 WindowsMediaPlayerSupport 0 0 0
-AddToFavourites 0 0 0
+AddToFavourites 0 1 0
 RealPlayerSupport 0 0 0
 TotalMisc 0 0 0
 DirectorSupport 0 0 0
@@ -71,48 +71,36 @@ END_MISC
 
 # Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
 BEGIN_TIME 24
-0 3 6 29224 0 22 1792536
-1 0 0 0 0 0 0
-2 0 0 0 0 0 0
-3 0 0 0 0 0 0
-4 0 0 0 0 0 0
-5 0 0 0 0 0 0
-6 0 0 0 0 0 0
+0 80 172 663092 1 23 1793098
+1 105 311 680753 13 50 2979052
+2 47 80 270061 5 5 8532
+3 1 1 7635 9 10 339162
+4 0 0 0 2 2 43843
+5 0 0 0 4 70 5651192
+6 0 0 0 1 1 6067
 7 0 0 0 0 0 0
-8 0 0 0 0 0 0
-9 0 0 0 0 0 0
-10 0 0 0 0 0 0
-11 0 0 0 0 0 0
-12 0 0 0 0 0 0
-13 0 0 0 0 0 0
-14 0 0 0 0 0 0
-15 0 0 0 0 0 0
-16 0 0 0 0 0 0
-17 0 0 0 0 0 0
-18 0 0 0 0 0 0
-19 0 0 0 0 0 0
-20 0 0 0 0 0 0
-21 0 0 0 0 0 0
-22 0 0 0 0 0 0
-23 0 0 0 0 0 0
+8 0 0 0 2 24 1808040
+9 0 0 0 1 1 6067
+10 0 0 0 1 1 6067
+11 0 0 0 1 2 6576
+12 1 1 87959 1 25 1793443
+13 0 0 0 1 1 6067
+14 65 364 3723852 12 146 10306388
+15 70 466 8108640 12 147 9827455
+16 54 307 4721162 13 33 1650148
+17 76 390 6880216 8 218 13103124
+18 74 299 1894084 2 98 6666666
+19 80 347 4990853 8 377 26199357
+20 18 40 123974 3 3 7205
+21 85 548 12175573 11 290 20758384
+22 53 228 1237090 2 24 1799159
+23 126 677 1926013 32 142 9179720
 END_TIME
-
-# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
-# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
-# The 10 first Hits must be first (order not required for others)
-BEGIN_VISITOR 1
-110.171.251.35 3 6 29224 20131201000210 20131201000022 /admin/index.php
-END_VISITOR
-
-# Date - Pages - Hits - Bandwidth - Visits
-BEGIN_DAY 1
-20131201 3 6 29224 1
-END_DAY
 
 # Domain - Pages - Hits - Bandwidth
 # The 10 first Pages must be first (order not required for others)
 BEGIN_DOMAIN 1
-ip 3 6 29224
+ip 935 4231 47490957
 END_DOMAIN
 
 # Cluster ID - Pages - Hits - Bandwidth
@@ -126,8 +114,9 @@ END_LOGIN
 
 # Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
 # The 10 first Hits must be first (order not required for others)
-BEGIN_ROBOT 1
-no_user_agent 22 1792536 20131201000048 0
+BEGIN_ROBOT 2
+no_user_agent 1537 112055225 20131203212850 0
+crawl 6 279951 20131203054959 0
 END_ROBOT
 
 # Worm ID - Hits - Bandwidth - Last visit
@@ -145,32 +134,41 @@ END_EMAILSENDER
 BEGIN_EMAILRECEIVER 0
 END_EMAILRECEIVER
 
-# Session range - Number of visits
-BEGIN_SESSION 0
-END_SESSION
-
-# URL - Pages - Bandwidth - Entry - Exit
-# The 10 first Pages must be first (order not required for others)
-BEGIN_SIDER 2
-/admin/index.php 2 11834 0 0
-/index.php 1 9191 1 0
-END_SIDER
-
 # Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
-BEGIN_FILETYPES 3
-php 3 21025 0 0
-jpg 1 4627 0 0
-js 2 3572 0 0
+BEGIN_FILETYPES 10
+css 368 281527 0 0
+png 911 1659522 0 0
+woff 23 356905 0 0
+map 29 0 0 0
+php 770 9692139 0 0
+html 82 766555 0 0
+js 1033 1301461 0 0
+jpg 953 33162107 0 0
+Unknown 31 264138 0 0
+gif 31 6603 0 0
 END_FILETYPES
 
 # OS ID - Hits
-BEGIN_OS 1
-macosx 6
+BEGIN_OS 5
+macosx 3584
+linuxandroid 3
+winlong 1
+winxp 1
+win2008 642
 END_OS
 
 # Browser ID - Hits
-BEGIN_BROWSER 1
-chrome31.0.1650.57 6
+BEGIN_BROWSER 10
+msie6.0 1
+chrome29.0.1547.57 1472
+mozilla 1
+android 2
+chrome28.0.1500.95 65
+firefox21.0 1
+chrome31.0.1650.57 2682
+msie9.0 1
+safari4.0.3 5
+chrome31.0.1650.59 1
 END_BROWSER
 
 # Screen size - Hits
@@ -187,11 +185,11 @@ END_UNKNOWNREFERERBROWSER
 
 # Origin - Pages - Hits 
 BEGIN_ORIGIN 6
-From0 0 0
+From0 41 53
 From1 0 0
 From2 0 0
 From3 0 0
-From4 3 6
+From4 894 4178
 From5 0 0
 END_ORIGIN
 
@@ -215,9 +213,144 @@ BEGIN_KEYWORDS 0
 END_KEYWORDS
 
 # Errors - Hits - Bandwidth
-BEGIN_ERRORS 0
+BEGIN_ERRORS 5
+302 58 33354
+206 6 156015
+500 16 4265
+301 3 1689
+404 65 1395112
 END_ERRORS
 
 # URL with 404 errors - Hits - Last URL referer
-BEGIN_SIDER_404 0
+BEGIN_SIDER_404 34
+/apple-touch-icon-precomposed.png 1 -
+/admin/content/sitetree/ 1 -
+/dlya-nego/maccazheri-proctati 1 http://thelovestore.ru/
+/user/ 2 -
+/user 1 -
+/assets/index.html 1 -
+/apple-touch-icon.png 1 -
+/bitrix/admin/index.php 2 -
+/admin.php 8 -
+/textpattern/include/import/BloggerImportTemplate.txt 1 -
+/user/register 1 -
+/cms/admin/index.php 1 -
+/administrator/index.php 10 -
+/hostcmsfiles/main.js 1 -
+/bn/js/checkbox/js/script.js 1 -
+/engine/engine.php 1 -
+/admin/login.php 3 -
+/password_double_opt.php 1 -
+/includes/init.php 1 -
+/js/api.js 1 -
+/core/packages/.gitignore 1 -
+/administrator/ 2 -
+/bitrix/admin/ 1 -
+/include/ajax/textPreview.php 1 -
+/netcat/admin/ 1 -
+/js/checkbox/js/script.js 1 -
+/js/easy.php 1 -
+/typo3/border.html 1 -
+/core/tpl/admin/default.tpl.html 1 -
+/wp-login.php 11 -
+/registration/ 1 -
+/admin/login 1 -
+/product_compare.php 1 -
+/phpshop/admpanel/ 1 -
 END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 9
+110.171.251.35 848 3584 30333200 20131203233503 20131203202225 /admin/index.php
+212.232.46.182 74 490 11170168 20131203143747
+176.15.95.44 6 150 5856071 20131202212122
+178.20.178.94 2 2 12949 20131202230603
+69.197.166.106 1 1 87959 20131201121030
+176.111.63.191 1 1 7635 20131203031653
+95.67.80.226 1 1 10218 20131201171834
+5.104.200.78 1 1 6522 20131202011359
+37.139.50.100 1 1 6235 20131201164237
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 3
+20131201 514 2133 21245646 8
+20131202 150 835 15200068 8
+20131203 271 1263 11045243 4
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 5
+1h+ 5
+5mn-15mn 3
+15mn-30mn 1
+0s-30s 8
+30mn-1h 2
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 60
+/admin/index.php 593 3428793 7 7
+/index.php 129 626599 2 3
+/ 32 391865 7 6
+/admin/view/javascript/bootstrap-tagsinput/bootstrap-tagsinput.min.js.map 29 0 0 0
+/catalog/view/theme/precise/font/social-icons.woff 21 86979 0 0
+/login 11 70556 0 0
+/admin/rp_generator.php 10 171471 0 0
+/admin/ 10 41654 2 2
+/myadmin/navigation.php 9 43581 1 0
+/kracnii-ieroticheckii-komplekt-top-c-otkritoi-grud-yu-ctringi-yubka-na-shnurovke.html 8 31402 1 0
+/admin/tag_generator.php 1 261075 0 0
+/privacy-policy.html 1 6234 0 0
+/admin/keywords_generator.php 2 691627 0 0
+/about_us 1 6225 0 0
+/admin/rename_files.php 1 247298 0 0
+/ieroticheckaya-odezhda/igrovie-koctyumi/vinilovii-koctyum-vampirsha.html 2 21407 0 0
+/dlya-nego/cekc-kukli/kukla-voctochnaya-roza.html 3 27736 0 0
+/admin/meta_description_generator.php 1 950010 0 0
+/ieroticheckaya-odezhda/kombinezon-ctractnii-pauk.html 1 9941 0 0
+/yarkoe-teddi-v-goroshek-ru.html 1 9576 0 0
+/cekc-igrushki/vibratori 1 11631 0 0
+/contact 1 6419 0 0
+/myadmin/import.php 1 4907 0 0
+/kukla-veronika.html 1 9193 0 0
+/myadmin/db_sql.php 1 3822 0 0
+/myadmin/export.php 1 3114137 0 0
+/ieroticheckaya-odezhda-ru/bikini-i-komplekti-ru/azhurnii-komplekt-teddi-perchatki-i-chulki-ru.html 2 21558 0 0
+/ieroticheckaya-odezhda/bodi-i-kombinezoni 1 11237 0 0
+/vce-dlya-cekca-ru/bdsm-i-cado-mazo-tovari-ru 1 10978 0 0
+/myadmin/index.php 4 7583 0 0
+/bristols-six-en 1 10945 0 0
+/dlya-nego/vakuumnie-pompi 1 11101 0 0
+/catalog/view/theme/precise/font/itembridge.woff 2 269926 0 0
+/cekc-igrushki/vibratori/pulya.html 1 10823 0 0
+/manufacturer 2 16277 0 0
+/myadmin/sql.php 6 56948 0 0
+/ieroticheckaya-odezhda-ru/bodi-i-kombinezoni-ru 1 10780 0 0
+/myadmin/phpmyadmin.css.php 6 25246 0 0
+/ieroticheckaya-odezhda 2 22014 0 1
+/ieroticheckaya-odezhda/igrovie-koctyumi 1 10817 0 0
+/igrovoi-koctyum-ctyuardecci-ru.html 1 10779 0 0
+/delivery-information.html 1 6231 0 0
+/kombinezon-krupnaya-cetka.html 2 20292 0 0
+/myadmin/db_structure.php 2 32588 0 0
+/cmoking.html 3 32082 0 0
+/myadmin/db_export.php 1 9741 0 0
+/about-us-ru 1 6249 0 0
+/kombinezon-v-krupnuyu-cetku-diamond-ru.html 5 52672 0 0
+/kozhanii-korcet-c-priotkritoi-grud-yu.html 1 10966 0 0
+/dlya-nego/vakuumnie-pompi/vakuumnaya-pompa-dlya-muzhchin.html 2 18910 0 0
+/vce-dlya-cekca-ru 1 7655 0 0
+/myadmin/main.php 2 16713 0 0
+/ieroticheckaya-odezhda-ru/bikini-i-komplekti-ru 1 10988 0 0
+/myadmin/ 2 7359 0 0
+/terms-and-conditions.html 1 6234 0 0
+/bodi-ribackaya-cetochka.html 1 10490 0 0
+/cekc-igrushki 1 7655 0 0
+/dlya-nego/cekc-kukli 1 10891 0 0
+/ieroticheckaya-odezhda/bodi-i-kombinezoni/kombinezon-ctractnii-pauk.html 1 9151 0 0
+/ieroticheckaya-odezhda-ru 2 21720 0 0
+END_SIDER

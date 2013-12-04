@@ -39,14 +39,7 @@ $(document).ready(function() {
 		}
 		
 		$('a[href*=\'' + url + '\']').parents('li[id]').addClass('active');
-	}
-
-
-	// tooltips on hover
-	if ($(window).width() > 960) {
-		$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
-	}
-	
+	}	
 });
 
 // Autocomplete */	
@@ -87,11 +80,11 @@ $(document).ready(function() {
 		keydown: function(event) {
 			switch(event.keyCode) {
 				case 27: // escape
-					this.hide();
-					break;
+				this.hide();
+				break;
 				default:
-					this.request();
-					break;
+				this.request();
+				break;
 			}
 		},
 		show: function() {
@@ -101,7 +94,7 @@ $(document).ready(function() {
 				top: pos.top + $(this.element).outerHeight(),
 				left: pos.left
 			});
-						
+
 			$(this.element).siblings('ul.dropdown-menu').show();			
 		},
 		hide: function() {

@@ -1,0 +1,184 @@
+<modification>
+
+	<id>autolinks</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>ovife21</author>
+	
+	
+	<file name="catalog/view/theme/*/template/common/header.tpl">
+		<operation>
+			<search position="before"><![CDATA[</head>]]></search>
+			<add><![CDATA[
+			<link rel="stylesheet" href="catalog/view/javascript/jquery.cluetip.css" type="text/css" />
+			<script src="catalog/view/javascript/jquery.cluetip.js" type="text/javascript"></script>
+			
+			<script type="text/javascript">
+				$(document).ready(function() {
+				$('a.title').cluetip({splitTitle: '|'});
+				  $('ol.rounded a:eq(0)').cluetip({splitTitle: '|', dropShadow: false, cluetipClass: 'rounded', showtitle: false});
+				  $('ol.rounded a:eq(1)').cluetip({cluetipClass: 'rounded', dropShadow: false, showtitle: false, positionBy: 'mouse'});
+				  $('ol.rounded a:eq(2)').cluetip({cluetipClass: 'rounded', dropShadow: false, showtitle: false, positionBy: 'bottomTop', topOffset: 70});
+				  $('ol.rounded a:eq(3)').cluetip({cluetipClass: 'rounded', dropShadow: false, sticky: true, ajaxCache: false, arrows: true});
+				  $('ol.rounded a:eq(4)').cluetip({cluetipClass: 'rounded', dropShadow: false});  
+				});
+			</script>
+			]]></add>
+		</operation>		
+	</file>	
+	
+	<file name="catalog/controller/product/product.php">
+		<operation>
+			<search position="before"><![CDATA[public function captcha() {]]></search>
+			<add><![CDATA[
+			private function parseText($node, $keyword, $dom, $link, $target='', $tooltip = 0)
+			{
+				if (mb_strpos($node->nodeValue, $keyword) !== false)
+					{
+						$keywordOffset = mb_strpos($node->nodeValue, $keyword, 0, 'UTF-8');
+						$newNode = $node->splitText($keywordOffset);
+						$newNode->deleteData(0, mb_strlen($keyword, 'UTF-8'));
+						$span = $dom->createElement('a', $keyword);
+						if ($tooltip)
+							{
+								$span->setAttribute('href', '#');
+								$span->setAttribute('style', 'text-decoration:none');
+								$span->setAttribute('class', 'title');
+								$span->setAttribute('title', $keyword.'|'.$link);
+							}
+							else
+							{
+								$span->setAttribute('href', $link);
+								$span->setAttribute('target', $target);
+								$span->setAttribute('style', 'text-decoration:none');
+							}							
+						
+						$node->parentNode->insertBefore($span, $newNode);
+						$this->parseText($newNode ,$keyword, $dom, $link, $target, $tooltip);
+					}					
+			}
+			
+			
+
+			]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[$this->data['attribute_groups']]]></search>
+			<add><![CDATA[
+				$autolinks = $this->config->get('autolinks'); 
+				
+				if (isset($autolinks) && (strpos($this->data['description'], 'iframe') == false) && (strpos($this->data['description'], 'object') == false)){
+				$xdescription = mb_convert_encoding(html_entity_decode($this->data['description'], ENT_COMPAT, "UTF-8"), 'HTML-ENTITIES', "UTF-8"); 
+				
+				libxml_use_internal_errors(true);
+				$dom = new DOMDocument; 			
+				$dom->loadHTML('<div>'.$xdescription.'</div>');				
+				libxml_use_internal_errors(false);
+
+				
+				$xpath = new DOMXPath($dom);
+								
+				foreach ($autolinks as $autolink)
+				{	
+					$keyword = $autolink['keyword'];
+					$xlink = mb_convert_encoding(html_entity_decode($autolink['link'], ENT_COMPAT, "UTF-8"), 'HTML-ENTITIES', "UTF-8");
+					$target = $autolink['target'];
+					$tooltip = isset($autolink['tooltip']);
+													
+					$pTexts = $xpath->query(
+						sprintf('///text()[contains(., "%s")]', $keyword)
+					);
+					
+					foreach ($pTexts as $pText) {
+						$this->parseText($pText, $keyword, $dom, $xlink, $target, $tooltip);
+					}
+
+									
+				}
+						
+				$this->data['description'] = $dom->saveXML($dom->documentElement);
+				
+				}
+				
+			]]></add>
+		</operation>		
+	</file>	
+	
+	<file name="catalog/controller/information/information.php">
+		<operation>
+			<search position="before"><![CDATA[public function info() {]]></search>
+			<add><![CDATA[
+			private function parseText($node, $keyword, $dom, $link, $target='', $tooltip = 0)
+			{
+				if (mb_strpos($node->nodeValue, $keyword) !== false)
+					{
+						$keywordOffset = mb_strpos($node->nodeValue, $keyword, 0, 'UTF-8');
+						$newNode = $node->splitText($keywordOffset);
+						$newNode->deleteData(0, mb_strlen($keyword, 'UTF-8'));
+						$span = $dom->createElement('a', $keyword);
+						if ($tooltip)
+							{
+								$span->setAttribute('href', '#');
+								$span->setAttribute('style', 'text-decoration:none');
+								$span->setAttribute('class', 'title');
+								$span->setAttribute('title', $keyword.'|'.$link);
+							}
+							else
+							{
+								$span->setAttribute('href', $link);
+								$span->setAttribute('target', $target);
+								$span->setAttribute('style', 'text-decoration:none');
+							}							
+						
+						$node->parentNode->insertBefore($span, $newNode);
+						$this->parseText($newNode ,$keyword, $dom, $link, $target, $tooltip);
+					}					
+			}
+			
+			
+
+			]]></add>
+		</operation>
+		<operation>
+			<search position="before" index="1"><![CDATA[$this->data['continue']]]></search>
+			<add><![CDATA[
+				$autolinks = $this->config->get('autolinks'); 
+				
+				if (isset($autolinks) && (strpos($this->data['description'], 'iframe') == false) && (strpos($this->data['description'], 'object') == false)){
+				$xdescription = mb_convert_encoding(html_entity_decode($this->data['description'], ENT_COMPAT, "UTF-8"), 'HTML-ENTITIES', "UTF-8"); 
+				
+				libxml_use_internal_errors(true);
+				$dom = new DOMDocument; 			
+				$dom->loadHTML('<div>'.$xdescription.'</div>');				
+				libxml_use_internal_errors(false);
+				
+						
+				$xpath = new DOMXPath($dom);
+				
+				foreach ($autolinks as $autolink)
+				{	
+					$keyword = $autolink['keyword'];
+					$xlink = mb_convert_encoding(html_entity_decode($autolink['link'], ENT_COMPAT, "UTF-8"), 'HTML-ENTITIES', "UTF-8");
+					$target = $autolink['target'];
+					$tooltip = isset($autolink['tooltip']);
+					
+					$pTexts = $xpath->query(
+						sprintf('///text()[contains(., "%s")]', $keyword)
+					);
+					
+					foreach ($pTexts as $pText) {
+						$this->parseText($pText, $keyword, $dom, $xlink, $target, $tooltip);
+					}
+
+									
+				}
+								
+				$this->data['description'] = $dom->saveXML($dom->documentElement);
+				}
+				
+			]]></add>
+		</operation>		
+	</file>
+	
+</modification>
+

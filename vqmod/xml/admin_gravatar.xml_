@@ -1,0 +1,59 @@
+<modification>
+	<id>Admin Gravatar</id>
+	<version>1.2</version>
+	<vqmver>1.0.8</vqmver>
+	<author>temadev</author>
+	<file name="admin/view/template/common/header.tpl">
+		<operation>	
+			<search position="after" offset="1"><![CDATA[<a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="fa fa-caret-down"></i></a>]]></search>
+			<add><![CDATA[
+                     <li role="presentation" class="dropdown-header visible-md visible-lg"><?php echo $logged; ?></li>
+                     <li class="divider visible-md visible-lg"></li>
+			]]></add>
+			
+		</operation>
+		<operation>	
+			<search position="replace"><![CDATA[<a href="#" data-toggle="dropdown"><?php echo $logged; ?> <i class="fa fa-caret-down"></i></a>]]></search>
+			<add><![CDATA[<a href="#" data-toggle="dropdown" class="active visible-md visible-lg"><img src="http://0.gravatar.com/avatar/<?php echo md5(strtolower(trim($this->user->getUserEmail()))); ?>?s=20&d=<?php echo 'http://'.$_SERVER['HTTP_HOST']; ?>/admin/view/image/opencart_72.jpg" class="img-responsive img-polaroid"/></a><a href="#" data-toggle="dropdown" class="hidden-md hidden-lg"><?php echo $logged; ?> <i class="fa fa-caret-down"></i></a>]]></add>
+			
+		</operation>
+
+	</file>
+
+	<file name="system/library/user.php">
+		<operation>	
+			<search position="after"><![CDATA[private $username;]]></search>
+			
+			<add><![CDATA[
+			private $email;
+			]]></add>
+			
+		</operation>
+		<operation>	
+			<search position="after"><![CDATA[$this->username = $user_query->row['username'];]]></search>
+			
+			<add><![CDATA[
+			$this->email = $user_query->row['email'];
+			]]></add>
+			
+		</operation>
+		<operation>	
+			<search position="after"><![CDATA[$this->username = '';]]></search>
+			
+			<add><![CDATA[
+			$this->email = '';
+			]]></add>
+			
+		</operation>
+		<operation>	
+			<search position="before"><![CDATA[public function getUserName() {]]></search>
+			
+			<add><![CDATA[
+          public function getUserEmail() {
+            return $this->email;
+          }
+			]]></add>
+			
+		</operation>
+	</file>
+</modification>
